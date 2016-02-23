@@ -1,0 +1,43 @@
+{
+  "name": "alltomp3-cli",
+  "version": "0.1.0",
+  "description": "Download every song with one command",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "bin": {
+    "alltomp3": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllToMP3/alltomp3-cli.git"
+  },
+  "keywords": [
+    "youtube",
+    "mp3",
+    "vimeo",
+    "convert",
+    "lyrics",
+    "deezer",
+    "itunes",
+    "tags",
+    "music",
+    "video",
+    "cli",
+    "download"
+  ],
+  "author": "Basile Bruneau <basilebruneau@gmail.com>",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/AllToMP3/alltomp3-cli/issues"
+  },
+  "homepage": "https://github.com/AllToMP3/alltomp3-cli#readme",
+  "dependencies": {
+    "alltomp3": "https://github.com/AllToMP3/alltomp3",
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "lodash": "^4.5.0",
+    "progress": "^1.1.8"
+  }
+}
