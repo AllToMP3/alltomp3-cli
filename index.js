@@ -5,6 +5,30 @@ const _ = require('lodash');
 const alltomp3 = require('alltomp3');
 const ProgressBar = require('progress');
 const chalk = require('chalk');
+const tabtab = require('tabtab');
+const request = require('request');
+const fs = require('fs');
+
+var commandName = 'alltomp3';
+
+if(process.argv.slice(2)[0] === 'completion') return tabtab.complete(commandName, function(err, data) {
+    if(err || !data) return;
+
+    var query = _.trim(data.line.replace(commandName, '').replace(/[\\]/g, ''));
+    var last = data.line.split(/[^\\] /);
+    last = last[last.length-1];
+    var requestSuggest = request({
+        url: 'http://suggestqueries.google.com/complete/search?hl=en&ds=yt&client=firefox&q=' + encodeURIComponent(query),
+        json: true
+    }, function(error, response, results) {
+        if (results.length == 2) {
+            var out = _.map(results[1], function (s) {
+                return last.replace(/[\\]/g, '') + s.replace(query, '');
+            });
+            tabtab.log(out, data);
+        }
+    });
+});
 
 program
     .version('0.0.1')
