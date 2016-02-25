@@ -37,13 +37,23 @@ program
 
 var query = _.join(program.args, ' ');
 
+var dl;
+
+if (alltomp3.isURL(query)) {
+    dl = alltomp3.downloadAndTagSingleURL(query, "./", function (infos) {
+        console.log("\n");
+        console.log("File downloaded: " + chalk.bold.yellow(infos.file));
+    });
+} else {
+    dl = alltomp3.findAndDownload(query, "./", function (infos) {
+        console.log("\n");
+        console.log("File downloaded: " + chalk.bold.yellow(infos.file));
+    });
+}
+
 var lastProgress = 0;
 var lastInfos = chalk.bold.white(query);
 
-var dl = alltomp3.findAndDownload(query, "./", function (infos) {
-    console.log("\n");
-    console.log("File downloaded: " + chalk.bold.yellow(infos.file));
-});
 dl.on('search-end', function() {
 
 });
