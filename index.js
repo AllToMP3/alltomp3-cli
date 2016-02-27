@@ -86,7 +86,7 @@ var barOpts = {
     total: 200,
     clear: true
 };
-var bar = new ProgressBar(':operation :infos [:bar] :percent :etas', barOpts);
+var bar = new ProgressBar(':operation :infos \n[:bar] :percent :etas', barOpts);
 
 bar.tick(0, {
     operation: chalk.green("Searching"),
