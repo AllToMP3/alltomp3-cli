@@ -34,12 +34,12 @@
   },
   "homepage": "https://github.com/AllToMP3/alltomp3-cli#readme",
   "dependencies": {
-    "alltomp3": "https://github.com/AllToMP3/alltomp3",
+    "alltomp3": "git+https://github.com/AllToMP3/alltomp3",
     "chalk": "^1.1.1",
     "commander": "^2.9.0",
     "lodash": "^4.5.0",
     "progress": "git+https://github.com/AllToMP3/node-progress.git#multiline_support",
     "request": "^2.69.0",
-    "tabtab": "https://github.com/AllToMP3/node-tabtab"
+    "tabtab": "git+https://github.com/AllToMP3/node-tabtab"
   }
 }
