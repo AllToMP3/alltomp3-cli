@@ -65,7 +65,7 @@ if (queryType == 'playlist-url') {
             }
         }
 
-        return out;
+        return chalk.bold.white(out);
     }
 
     var barInfos = {
