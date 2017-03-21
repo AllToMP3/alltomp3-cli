@@ -1,6 +1,10 @@
 # alltomp3-cli
 Download every song with one command.
 
+## Requirements
+- Node 7 + NPM;
+- [AllToMP3 requirements](https://github.com/AllToMP3/alltomp3#requirements).
+
 ## Installation
 ```
 npm install -g
